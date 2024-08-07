@@ -5,4 +5,4 @@
 
 # Introduction
 
-This is a follow-along tutorial for almost complete beginners to react. Follow the steps in the tutorial.md file. Step 3 is a bit difficult but if you want routing in your application then it's needed.
+This is a follow-along tutorial for almost complete beginners to react. Follow the steps in the tutorial.md file. Step 3 is a bit difficult but if you want routing in your application then it's needed. Check out the main branch and get coding! If you need help you can look at the other branches for some guidance. 
