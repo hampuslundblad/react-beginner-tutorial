@@ -357,7 +357,7 @@ Add the title component to your pages, replace the existing greeting with the ti
 Open the UnorderedList.tsx file, it's beautiful isn't it? But what if we want to update it in some way? Perhaps we want a button that adds an item to the list when pushed. We'll we could add a button inside this component and that would work. But then it would be a UnorderedListWithButton.tsx. What I'm hinting at here is that we want this component to only care about rendering a list, nothing else. So now we'll make it more flexible.
 
 
-1. Start with creating a new type, `UnorderedListProps`. It should have one propertly called `list` which has the type of `Ingredients[]`
+1. Start with creating a new type, `UnorderedListProps`. It should have one propertly called `list` which has the type of `Ingredients[]`. At this point you should add the "export" keyword to your ingredient type. It enables so that other files can make use of this type!
 
 2. Change the unordered list to instead of having the data inside of the component, use the prop instead.
 
