@@ -1,4 +1,7 @@
 # Prerequisites
+- Preferrebly node 20+, however node 18 can also work but it's not tested.
+- Basic understanding of HTML, CSS, and Javascript
+
 
 # Introduction
 
