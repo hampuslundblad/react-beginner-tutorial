@@ -245,6 +245,15 @@ This section assumes that we're working in the UnorderedList.tsx component.
 
 Use the array to render the same elements. The end result should be identical as if you "hardcoded" the values.
 
+3. For practice purpose we want to specify what type our array has, typescript can sometimes figure out what type the variable has, but we'll need this later ;)
+   Specify the type for ingredients, it should look something like this
+
+```js
+const ingredients : string[] = ...
+```
+
+Here the `: string[]` specifies that this should be an array of strings. The brackets here are important as the specify that it's an array, and not just a string.
+
 ## 4.4 We need more data
 
 ### Starting off easy
@@ -270,10 +279,10 @@ This section assumes we're working in UnorderedList.tsx, we'll update the previo
 To get you started a type looks like this
 
 ```js
-type Ingredient {
-name:string,
-...
-}
+type Ingredient = {
+  name: string,
+  ...
+};
 ```
 
 </details>
@@ -294,7 +303,9 @@ const ingredient: Ingredient = {
 </details>
 
 3. This is great! Now we can store or data in a more structured way!
-   Try and render our ingredient in any way you like, the most important part is that we show "milk" and "4l". If you find it difficult check out this resource [Telerik](https://www.telerik.com/blogs/react-basics-working-react-objects). It covers additional stuff but to filter out relevant information is a skill in itself!
+   Try and render our ingredient using our `ingredient` variable, in any way you like, the most important part is that we show "milk" and "4l". If you find it difficult check out this resource [Telerik](https://www.telerik.com/blogs/react-basics-working-react-objects). It covers additional stuff but to filter out relevant information is a skill in itself!
+
+4. So we've learned how to render text from objects, but if we loop back to our array it was very convenient to render several items. Now we'll update our Ingredient type to support this. In typescript it possible to create an array of objects. Arrays don't really care what they contain, it can be number, string, undefined, or objects!
 
 # 5 Component and props!
 
@@ -355,7 +366,7 @@ Types and interfaces are essentially the same but there are some subtle differen
 
 For example,
 
-`type HeadingProps {
+`type HeadingProps = {
   title:string;
   body:string;
 }`
