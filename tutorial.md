@@ -2,6 +2,8 @@
 
 This file is called a markdown file, basically a glorified text file. If you open it "raw" it will look like any other text file, however if you use VS Code you can press Ctrl + Shift + P and search markdown: open preview and press enter, it should open the markdown file in a new window where it looks prettier :)
 
+If you get stuck or need some reminders, check out the [Cheat sheet](#cheat-sheet) section.
+
 # 1. Getting started
 
 Start by creating a new Vite project. To do this, run `npm create vite@latest`. When prompted to choose a project name, type "." (a dot) and select "Ignore files and continue." Then choose `React` and `Typescript + SWC`. Follow the instructions provided.
