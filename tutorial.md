@@ -268,7 +268,7 @@ We will expand on this in the next section, see you there!
 
 # 5. Types and objects
 
-We'll leave our arrays for a while, now we'll get started with Objects and types! If you feel a bit rusty check out the Typescript documentation for typed objects [here](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+We'll leave our arrays for a while, now we'll get started with Objects and types! If you feel a bit rusty check out the Typescript documentation for typed objects [here](https://www.typescriptlang.org/docs/handbook/2/objects.html). Remember to remove any unused code, VS Code usually highlights this with a yellow squiggly line and states that "...is assigned a value but never used."
 
 This section assumes we're working in UnorderedList.tsx, we'll update the previous code.
 
@@ -305,7 +305,38 @@ const ingredient: Ingredient = {
 3. This is great! Now we can store or data in a more structured way!
    Try and render our ingredient using our `ingredient` variable, in any way you like, the most important part is that we show "milk" and "4l". If you find it difficult check out this resource [Telerik](https://www.telerik.com/blogs/react-basics-working-react-objects). It covers additional stuff but to filter out relevant information is a skill in itself!
 
-4. So we've learned how to render text from objects, but if we loop back to our array it was very convenient to render several items. Now we'll update our Ingredient type to support this. In typescript it possible to create an array of objects. Arrays don't really care what they contain, it can be number, string, undefined, or objects!
+4. So we've learned how to render text from objects, but if we loop back to our array it was very convenient to render several items. In typescript it possible to create an array of objects. Arrays don't really care what they contain, it can be number, string, undefined, or objects! Update the ingredient. Create a variable that has the type "array of ingredient" and name it ingredients. For now it can be an empty array. Don't forget the s! In coding it's important to name something in plural when the variable is an array, and singular when it's just a single object, string, or number.
+
+5. Now add an ingredient to your ingredients, you can either add it as you go with the .push method, or initialize the array with your ingredients, the last option is preffered.
+<details>
+<summary>  First hint </summary>
+A start could look like this
+
+```js
+const ingredients: Ingredient[] = [
+  {
+    /*** Your ingredient in here */
+  },
+];
+```
+
+</details>
+
+<details>
+<summary> Final hint </summary>
+Was it difficult? Since you opened this hint you'll get a bit of extra homework, add 5 more obejcts to the ingredients array, you can choose the name and amount freely!
+Here's how you intialize the array with one object:
+
+```js
+const ingredients: Ingredient[] = [
+  {
+    name: "milk",
+    amount: "4l",
+  },
+];
+```
+
+</details>
 
 # 6. Component and props!
 
