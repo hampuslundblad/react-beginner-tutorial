@@ -225,6 +225,77 @@ It should contain a heading called "Steps". Then an ordered list with three item
 
 Add this component to Lists.tsx
 
+## 4.3 Lists, lists and more lists!
+
+Often we want to render a list from some sort of data, and we don't always know what this data contains. So we cannot always simply hard code what the list should look like, instead we need to iterate on the data and create the list from data! Now we will render a list given a array of strings.
+
+This section assumes that we're working in the UnorderedList.tsx component.
+
+1. Create an array that contains "Wheat", "Flour", "Milk".
+2. Instead of rendering your list like this
+
+```js
+...
+<li> Milk </li>
+<li> Flour </li>
+<li> Wheat </li>
+...
+
+```
+
+Use the array to render the same elements. The end result should be identical as if you "hardcoded" the values.
+
+## 4.4 We need more data
+
+### Starting off easy
+
+We'll start of easy, update your unordered list so that it shows the amount we need for each ingredient, an example could look like this
+
+```js
+<li> Milk - 4L </li>
+```
+
+You can either hard code the values or update your array!
+
+# Types and objects
+
+We'll leave our arrays for a while, now we'll get started with Objects and types! If you feel a bit rusty check out the Typescript documentation for typed objects [here](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+
+This section assumes we're working in UnorderedList.tsx, we'll update the previous code.
+
+1. Create an object type called Ingredient, it should contain two properties, name with the type of string, and amount with the type string.
+
+<details>
+<summary> Hint </summary>
+To get you started a type looks like this
+
+```js
+type Ingredient {
+name:string,
+...
+}
+```
+
+</details>
+
+2. Create a variable named `milk` with the type of Ingredient, this is done using ":".
+It should have the name = "milk" and amount = "4L"
+<details>
+<summary> Hint </summary>
+Your object could look something like this,
+
+```js
+const ingredient: Ingredient = {
+  name: "milk",
+  amount: "4l",
+};
+```
+
+</details>
+
+3. This is great! Now we can store or data in a more structured way!
+   Try and render our ingredient in any way you like, the most important part is that we show "milk" and "4l". If you find it difficult check out this resource [Telerik](https://www.telerik.com/blogs/react-basics-working-react-objects). It covers additional stuff but to filter out relevant information is a skill in itself!
+
 # 5 Component and props!
 
 Now let's create a basic Title component which has some styling, we want to display a title on the page, and we don't want to re-write the code everytime we want a title.
