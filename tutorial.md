@@ -262,16 +262,21 @@ export default ComponentName
 
 ## A basic function component with props
 
-```
-
+```js
 type ComponentNameProps {
-text:string
+  text:string;
 }
 
 function ComponentName (props: ComponentNameProps) {
 return (<div> {props.text} </div>)
 }
 
+```
+
+The prop can be used like this
+
+```js
+<ComponentName text={"text"} />
 ```
 
 ## A button with a onClick method
@@ -303,3 +308,11 @@ const Button = () => {
 ```
 
 The first example is often preferred as it's easier to read, however if you want something quick and dirt you can use the second example.
+
+# Resources
+
+[W3 Schools Typescript](https://www.w3schools.com/typescript/index.php)
+
+[React documentation](https://react.dev/reference/react)
+
+[Tanstack/router](https://tanstack.com/router/latest/docs/framework/react/overview)
