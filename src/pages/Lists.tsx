@@ -1,4 +1,10 @@
+import Title from "../components/Title";
+
 function Lists() {
-  return <div>Hello Lists!</div>;
+  return (
+    <div>
+      <Title title={"Hello Lists"} />:
+    </div>
+  );
 }
 export default Lists;
