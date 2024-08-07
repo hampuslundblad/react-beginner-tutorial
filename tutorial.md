@@ -114,7 +114,10 @@ export const Route = createRootRoute({
 });
 ```
 
-In this file also add your navigation bar, check out your page and make sure it renders! At this moment a "Not found" will be shown, that's because we haven't told tanstack/router what to show here, but that comes next.
+In this file also add your navigation bar, check out your page and make sure it renders!
+For tanstack/router to properly work you'll need to update the `main.tsx` file. Simply copy and paste the code from [here](https://tanstack.com/router/latest/docs/framework/react/quick-start#srcmaintsx) to your `main.tsx` file.
+
+At this moment a "Not found" will be shown, that's because we haven't told tanstack/router what to show here, but that comes next.
 
 6. Add `src/routes/index.tsx`. You'll notice that code will be added as soon that you create the file, that's because tanstack/router creates some of the necessary code for us, automatically!
    Now you should see "Hello /!" on your page, if it doesn't make sure that the url is `http://localhost:5173/`
