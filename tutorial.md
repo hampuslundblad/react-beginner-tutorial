@@ -4,7 +4,7 @@ This file is called a markdown file, basically a glorified text file. If you ope
 
 # 1. Getting started
 
-Start with creating a new Vite project, to do this run ` npm create vite@latest`. Then selecting `React` and then `Typescript + SWC`. Follow the instructions given
+Start with creating a new Vite project, to do this run ` npm create vite@latest`. When choosing a project name, simply type "." (a dot) and then select "Ignore files and continue" Then selecting `React` and then `Typescript + SWC`. Follow the instructions given
 
 1. Remove the boilerplate code, this includes, index.css, App.css and the JSX in App.tsx. Make sure to leave and empty div or fragment for the app to render something at least.
 
