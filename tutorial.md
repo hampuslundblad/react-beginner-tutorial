@@ -256,8 +256,6 @@ Here the `: string[]` specifies that this should be an array of strings. The bra
 
 ## 4.4 We need more data
 
-### Starting off easy
-
 We'll start of easy, update your unordered list so that it shows the amount we need for each ingredient, an example could look like this
 
 ```js
@@ -266,7 +264,9 @@ We'll start of easy, update your unordered list so that it shows the amount we n
 
 You can either hard code the values or update your array!
 
-# Types and objects
+We will expand on this in the next section, see you there!
+
+# 5. Types and objects
 
 We'll leave our arrays for a while, now we'll get started with Objects and types! If you feel a bit rusty check out the Typescript documentation for typed objects [here](https://www.typescriptlang.org/docs/handbook/2/objects.html)
 
@@ -307,7 +307,7 @@ const ingredient: Ingredient = {
 
 4. So we've learned how to render text from objects, but if we loop back to our array it was very convenient to render several items. Now we'll update our Ingredient type to support this. In typescript it possible to create an array of objects. Arrays don't really care what they contain, it can be number, string, undefined, or objects!
 
-# 5 Component and props!
+# 6. Component and props!
 
 Now let's create a basic Title component which has some styling, we want to display a title on the page, and we don't want to re-write the code everytime we want a title.
 
@@ -319,6 +319,31 @@ Now let's create a basic Title component which has some styling, we want to disp
 ```
 
 Add the title component to your pages, replace the existing greeting with the title instead!
+
+# 7. A bit of a break
+
+Let's relax a little bit, if you haven't done so yet, give your navbar some styling! Perhaps it should have a nice background? Be shown vertically instead of horisontal? Take a few minutes to spice your page up. Make sure to import index.css to main.tsx!
+
+<details>
+<summary> Hint </summary>
+Hint? For styling? We'll since you're already here.
+You can add your css in index.css, if it doesn't work then make sure that it is imported to main.tsx, it should look something like
+
+```js
+import "./index.css";
+```
+
+Also remember to name your classes cleverly and avoid styling elements directly, since if you style a `<ul>` or `<div>` in a specific way, it will apply to everything in the entire app!
+
+</details>
+
+# 8. On Click
+
+Work in progress
+
+# 7. Conditional Rendering
+
+Work in progress
 
 # Cheat sheet
 
