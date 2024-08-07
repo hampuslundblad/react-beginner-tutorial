@@ -129,20 +129,6 @@ At this moment a "Not found" will be shown, that's because we haven't told tanst
 8. The navigation in tanstack/router works a bit differently than regular html, we cannot use `<a>` tags but instead will have to use the built-in <Link> which tanstack/router provides for us, and it works very similary. Now replace any code that might look like this `<a href="/">Home</a>` to `<Link to="/">Home</Link>`. If the automatic import doesn't work (VS Code will complain that Link doesn't exist), add this to your Navigation component `import { Link } from "@tanstack/react-router";
 `
 
-9. Update `__root.tsx` to include the menu. Update parts of the code to look like this.
-
-```js
-...
- component: () => (
-    <>
-      <Menu />
-      <Outlet />
-      <TanStackRouterDevtools />
-    </>
-  ),
-  ...
-```
-
 <details>
 <summary> Extra information on Root.tsx</summary>
 If you looked at the previous notes I explained briefly on how file-based routing works. Well then you might be confused on what route _root.tsx is shown, basically the root is present on all pages! That's the reason why we add the Menu here, since we want to show it on all of our pages. 
