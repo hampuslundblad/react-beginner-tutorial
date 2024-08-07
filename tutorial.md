@@ -340,6 +340,7 @@ const ingredients: Ingredient[] = [
 
 # 6. Component and props!
 
+## 6.1 Title
 Now let's create a basic Title component which has some styling, we want to display a title on the page, and we don't want to re-write the code everytime we want a title.
 
 - Create a component called title, place it in the components folder. It should take a prop that's the text we want to display.
@@ -350,6 +351,20 @@ Now let's create a basic Title component which has some styling, we want to disp
 ```
 
 Add the title component to your pages, replace the existing greeting with the title instead!
+
+## 6.2 List, with props?
+
+Open the UnorderedList.tsx file, it's beautiful isn't it? But what if we want to update it in some way? Perhaps we want a button that adds an item to the list when pushed. We'll we could add a button inside this component and that would work. But then it would be a UnorderedListWithButton.tsx. What I'm hinting at here is that we want this component to only care about rendering a list, nothing else. So now we'll make it more flexible.
+
+
+1. Start with creating a new type, `UnorderedListProps`. It should have one propertly called `list` which has the type of `Ingredients[]`
+
+2. Change the unordered list to instead of having the data inside of the component, use the prop instead.
+
+3. Update Lists.tsx to give the `UnorderedList` component the correct data.
+
+
+
 
 # 7. A bit of a break
 
@@ -369,8 +384,29 @@ Also remember to name your classes cleverly and avoid styling elements directly,
 </details>
 
 # 8. On Click
+Now we'll get started on some basic on click functionality, I'd suggested reading through the [Cheat sheet](#a-button-with-a-onclick-method) on onClick. Start with that and come back when you're done!
 
-Work in progress
+Welcome back! I hope that you learned something useful! Now we'll try and implemenet this ourselves, 
+
+In this section we'll be working in the `index.tsx` file.
+
+1. Create a button element, with a text that says "Log to the console"
+
+2. Create a function called handleClick, all it should do is log "The button has been clicked" to the console.
+
+3. Use the onClick attribute on the button and pass it the handleClick function, refer to the cheat sheet if you're unsure on how to do this.
+
+And we'll, that's pretty much the most exciting onClick gets! onClick is seldom very exciting on it's own, but instead needs to be combined with other functionality in order to achieve what we want. We will get to that, but before we'll need to learn some other stuff first
+
+# 7. useState in React.
+
+useState is an imported function (or hook) that React provides. It's used for managing state and keeping track of what the interface should show. To get stared, open up
+`Lists.tsx`, previously we added functionality to pass the UnorderedList some data and that will come in handy now.
+
+1. Create a button with the text "Add item to list"
+2. Create a handleClick function, it should push an item to the ingredients array.
+3. What happens when you click the button?
+
 
 # 7. Conditional Rendering
 
