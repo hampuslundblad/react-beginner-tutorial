@@ -1,10 +1,4 @@
-import Title from "../components/Title";
-
 function Index() {
-  return (
-    <div>
-      <Title title={"Hello Index"} />:
-    </div>
-  );
+  return <div>Hello index!</div>;
 }
 export default Index;

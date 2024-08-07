@@ -1,10 +1,4 @@
-import Title from "../components/Title";
-
 function News() {
-  return (
-    <div>
-      <Title title={"Hello News"} />:
-    </div>
-  );
+  return <div>Hello News!</div>;
 }
 export default News;
