@@ -77,7 +77,7 @@ Routing in React is not as straightforward as when you're only using HTML. Howev
 
 2. To show different pages, we'll use the TanStack Router library. The quick start guide can be found [here](https://tanstack.com/router/latest/docs/framework/react/quick-start), but we'll make some slight modifications.
 
-3. Follow the "Install the Vite Plugin and the Router Devtools" section in the quick start guide. You will also need to add `@vitejs/plugin-react` by running `npm i -D @vitejs/plugin-react`.
+3. Follow the "Install the Vite Plugin and the Router Devtools" section in the quick start guide. You will also need to add `@vitejs/plugin-react-swc` by running `npm i -D @vitejs/plugin-react-swc`.
 
 4. Follow the "Configure the Vite Plugin" section in the quick start guide. The file you're modifying is called `vite.config.ts`. Do not create the files specified in the tutorial yet; instead, go to the next step in this tutorial.
 
@@ -95,12 +95,6 @@ export default defineConfig({
 ```
 
 5. Create src/routes/\_\_root.tsx, add the following code to it, it's expected for you to not understand exactly what it does at this momement and that's okay!
-
-<details>
-  <summary>Notes</summary>
-  What we're using here (and will be using) is called file-based routing. It means that the the folder structure in our project reflects the way our application's routes are setup. For example
-  if we go to "/about" then tanstack/router will look for a file named "About.tsx" in our routes folder. If we want further nesting such as "/about/me" then you would use dot notation to expand the url. For this scenario it would look like this `about.me.tsx`.  One of the caveats is the starting route (/), for which you have to name the route `index.tsx`.
-</details>
 
 **src/routes/\_\_root.tsx**
 
@@ -122,25 +116,44 @@ export const Route = createRootRoute({
 
 In this file also add your navigation bar, check out your page and make sure it renders! At this moment a "Not found" will be shown, that's because we haven't told tanstack/router what to show here, but that comes next.
 
-6. Add src/routes/index.tsx. You'll notice that code will be added as soon that you create the file, that's because tanstack/router creates some of the necessary code for us, automatically!
+6. Add `src/routes/index.tsx`. You'll notice that code will be added as soon that you create the file, that's because tanstack/router creates some of the necessary code for us, automatically!
    Now you should see "Hello /!" on your page, if it doesn't make sure that the url is `http://localhost:5173/`
 
 - note, vite will use port 5173 as default, if that port is already taken then it will use 5174 instead
 
-7. Next up create src/routes/lists.tsx and src/routes/news.tsx. Currently the menu won't properly navigate to these pages, but we'll fix that in the next step.
+7. Next up create `routes/lists.tsx` and `routes/news.tsx` Currently the menu won't properly navigate to these pages, but we'll fix that soon.
 
-8. The navigation in tanstack/router works a bit differently than regular html, we cannot use `<a>` tags but instead will have to use the built-in <Link> which tanstack/router provides for us, and it works very similary. Now replace any code that might look like this `<a href="/">Home</a>` to `<Link to="/">Home</Link>`. If the automatic import doesn't work, add this to your Navigation component `import { Link } from "@tanstack/react-router";
+8. The navigation in tanstack/router works a bit differently than regular html, we cannot use `<a>` tags but instead will have to use the built-in <Link> which tanstack/router provides for us, and it works very similary. Now replace any code that might look like this `<a href="/">Home</a>` to `<Link to="/">Home</Link>`. If the automatic import doesn't work (VS Code will complain that Link doesn't exist), add this to your Navigation component `import { Link } from "@tanstack/react-router";
 `
 
+9. Update `__root.tsx` to include the menu. Update parts of the code to look like this.
+
+```js
+...
+ component: () => (
+    <>
+      <Menu />
+      <Outlet />
+      <TanStackRouterDevtools />
+    </>
+  ),
+  ...
+```
+
+<details>
+<summary> Extra information on Root.tsx</summary>
+If you looked at the previous notes I explained briefly on how file-based routing works. Well then you might be confused on what route _root.tsx is shown, basically the root is present on all pages! That's the reason why we add the Menu here, since we want to show it on all of our pages. 
+</details>
+</br>
 9. Now your navigation should work! When you click the menu the you should be greeted with "Hello /lists" if you're on the lists page, "Hello /news" if you're on the news page and so on.
 
 10. Lastly, in order to split up our code a bit, create a new folder called pages in the source directory. This folder will contain the code for our pages. Create three components
 
--Index
--Lists
--News
+- Index
+- Lists
+- News
 
-A example if the index component is
+A example of the index component is
 
 ```js
 function Index() {
@@ -158,10 +171,16 @@ import Index from "../pages/Index";
 export const Route = createFileRoute("/")({
   component: Index,
 });
-
-
-Now check again that the navigation works, and we're done with the hard pard! Good job!
 ```
+
+Do the same for Lists and News.
+Now check again that the navigation works. If you click on "News" then you should be shown whatever is present in your News.tsx file. and we're done with the hard pard! Good job!
+
+<details>
+  <summary>Notes</summary>
+  What we're using here (and will be using) is called file-based routing. It means that the the folder structure in our project reflects the way our application's routes are setup. For example
+  if we go to "/about" then tanstack/router will look for a file named "About.tsx" in our routes folder. If we want further nesting such as "/about/me" then you would use dot notation to expand the url. For this scenario it would look like this `about.me.tsx`.  One of the caveats is the starting route (/), for which you have to name the route `index.tsx`.
+</details>
 
 # 4 Gettings some reps in.
 
@@ -254,17 +273,19 @@ Example: **button**, **red-button**
 
 ## Naming in React
 
-Files in the pages folder uses PascalCase as the filename, `About.tsx` for example
+- Files in the pages folder uses PascalCase as the filename, `About.tsx` for example
 
-Files in the components folder uses lowercase as the filename, `button.tsx` for example. If it contains multiple word, use a "-" as a delimieter, `red-button.tsx` for example.
+- Files in the components folder uses lowercase as the filename, `button.tsx` for example. If it contains multiple word, use a "-" as a delimieter, `red-button.tsx` for example.
 
-Components are named using PascalCase, `function ComponentName ()` for example.
+- Components are named using PascalCase, `function ComponentName ()` for example.
 
-Functions that are not components uses camelCase for naming. For example `function calculateNumbers ()` or `const renderDiv = () =>`
+- Functions that are not components uses camelCase for naming. For example `function calculateNumbers ()` or `const renderDiv = () =>`
 
-Variables uses camelCase for naming, such as `const rootElement`, `const items` or `let shoppingItems`
+- Variables uses camelCase for naming, such as `const rootElement`, `const items` or `let shoppingItems`
 
-Types and interfaces uses PascalCase for naming, such as `type ButtonProps {}` or `interface ListProps = {}`
+- Types and interfaces uses PascalCase for naming, such as `type ButtonProps {}` or `interface ListProps = {}`
+
+- Folders uses camelCase for naming.
 
 ## Syntax
 
