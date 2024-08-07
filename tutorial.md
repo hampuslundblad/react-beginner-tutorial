@@ -12,15 +12,56 @@ Start by creating a new Vite project. To do this, run `npm create vite@latest`. 
 
 2. Run `npm run dev` if you haven't done so already, and ensure it starts without any errors. The page is expected to be entirely blank.
 
+<br/>
+<details>
+  <summary>Notes</summary>
+  <hr/>
+   Vite is only one of many tools that's used for creating React applications, essentially some of it's responsibilites are
+   - Creating a dev server so that you can view your application (localhost:XXXX)
+   - Bundling your code to pure javascript so that the browser can understand it.
+</details>
+
 # 2. Our first component.
 
 Since this is a tutorial, we'll start by creating some basic components. Our first will be a navigation bar.
 
 1. Create a folder named `components` in the source directory.
 
-2. Create a navigation component. This can look however you like! Check out W3Schools for examples if you'd like. At the moment, it doesn't matter exactly what it routes to; we'll fix that in the future.
+2. Create a navigation component. This can look however you like! Check out W3Schools for examples if you'd like. At the moment, it doesn't matter exactly what it routes to; we'll fix that in the future. If you want to add styling to it you can do so by adding the css to `index.css`, remember to import the css file in `main.tsx`. Also React is slighty different in the way that you add class names to elements. Instead of using the `class` attribute you use `className`.
 
 3. Add the component to `App.tsx`, and make sure it shows up. Congratulations, you've created your first component!
+
+<details>
+<summary> Hints </summary>
+1. Create a filed called `Navigation.tsx` for example in the components folder, it can also be called `Menu.tsx`, the exact name isn't the important part, as long as you and other people can understand it.
+
+2- Add the code for the navigation component
+
+```js
+function Navigation() {
+  return (
+    <ul>
+      <li>
+        <a href="#home">Home</a>
+      </li>
+      <li>
+        <a href="#news">News</a>
+      </li>
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+      <li>
+        <a href="#about">About</a>
+      </li>
+    </ul>
+  );
+  export default Navigation;
+}
+```
+
+Add some extra styling if you want to!
+
+</details>
 
 # 3 Routing
 
@@ -54,6 +95,12 @@ export default defineConfig({
 ```
 
 5. Create src/routes/\_\_root.tsx, add the following code to it, it's expected for you to not understand exactly what it does at this momement and that's okay!
+
+<details>
+  <summary>Notes</summary>
+  What we're using here (and will be using) is called file-based routing. It means that the the folder structure in our project reflects the way our application's routes are setup. For example
+  if we go to "/about" then tanstack/router will look for a file named "About.tsx" in our routes folder. If we want further nesting such as "/about/me" then you would use dot notation to expand the url. For this scenario it would look like this `about.me.tsx`.  One of the caveats is the starting route (/), for which you have to name the route `index.tsx`.
+</details>
 
 **src/routes/\_\_root.tsx**
 
@@ -316,3 +363,7 @@ The first example is often preferred as it's easier to read, however if you want
 [React documentation](https://react.dev/reference/react)
 
 [Tanstack/router](https://tanstack.com/router/latest/docs/framework/react/overview)
+
+```
+
+```
