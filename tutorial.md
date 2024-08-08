@@ -433,7 +433,33 @@ This is due to how React handles changes, we need to explicitly tell React that 
 
   The `name` and `setName` can be anything! However in the same way that you want normal variables to reflect the values they contain, the state variable and set-state function should reflect what they contain, and what they do. Here I choose `name` for the state variable, since I want it to contain a name, and `setName` since, well, it sets the value of the name variable. Check out the [React Documentation](https://react.dev/reference/react/useState#usage) for more information on how the useState hook works.
   
+Furthermore the useState hook also works well together with typescript. This is often done if the values starts out empty, an example might make it more clear. 
 
+```js
+const [names, setNames] = useState<string[]>([])
+```
+
+Here we explicitly state that the state is an array of string, since we initialize the array as empty typescript doesn't know what we're intending to add to it. 
+
+<details>
+  <summary> Hint </summary>
+  This is what your useState hook can look like.
+  ```js
+  const [ingredients, setIngredients] = useState<Ingredient[]>([])  
+  ```
+</details>
+
+2. Replace the `ingredients.push` with `setIngredients((previousValue => [...previousValue, item]))`
+
+<details>
+  <summary> Hint </summary>
+  ```js
+function handleClick() {
+    setIngredients((previousValue => [...previousValue, {name:"wheat", amount:"5"}]))
+    console.log(ingredients);
+  }
+  ``` 
+</details>
 
 # 10. Conditional Rendering
 
