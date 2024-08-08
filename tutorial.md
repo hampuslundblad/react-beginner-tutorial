@@ -398,7 +398,7 @@ In this section we'll be working in the `index.tsx` file.
 
 And we'll, that's pretty much the most exciting onClick gets! onClick is seldom very exciting on it's own, but instead needs to be combined with other functionality in order to achieve what we want. We will get to that, but before we'll need to learn some other stuff first
 
-# 7. useState in React.
+# 9. useState in React.
 
 useState is an imported function (or hook) that React provides. It's used for managing state and keeping track of what the interface should show. To get stared, open up
 `Lists.tsx`, previously we added functionality to pass the UnorderedList some data and that will come in handy now.
@@ -407,8 +407,35 @@ useState is an imported function (or hook) that React provides. It's used for ma
 2. Create a handleClick function, it should push an item to the ingredients array.
 3. What happens when you click the button?
 
+<details>
+  <summary> Hint - handleClick</summary>
+  This is what your handleClick function could look like.
+  
+  ```js
+  function handleClick() {
+    ingredients.push({ name: "wheat", amount: "ll" });
+  }
+```
 
-# 7. Conditional Rendering
+</details>
+
+Nothing happens, but why? Let's do some debugging, in the handleClick function add a console log after adding an item to the array. Now click the button and check what shows up in the console. Clearly we're adding items to the array, but nothing is happening, why is it so?
+
+This is due to how React handles changes, we need to explicitly tell React that it should keep an eye on our ingredients array and update the UI if the array changes, this is done using the useState hook. Let's update our code using the useState hook.
+
+1. Use the useState hook to create a state variable, set-state function, and initialize it with the same values as the previous array.
+
+   Example on how to use the useState hook
+
+   ```js
+   const [name , setName] = useState("Steven")
+   ```
+
+  The `name` and `setName` can be anything! However in the same way that you want normal variables to reflect the values they contain, the state variable and set-state function should reflect what they contain, and what they do. Here I choose `name` for the state variable, since I want it to contain a name, and `setName` since, well, it sets the value of the name variable. Check out the [React Documentation](https://react.dev/reference/react/useState#usage) for more information on how the useState hook works.
+  
+
+
+# 10. Conditional Rendering
 
 Work in progress
 
