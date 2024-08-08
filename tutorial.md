@@ -445,8 +445,9 @@ Here we explicitly state that the state is an array of string, since we initiali
   <summary> Hint </summary>
   This is what your useState hook can look like.
   ```js
-  const [ingredients, setIngredients] = useState<Ingredient[]>([])  
+
   ```
+
 </details>
 
 2. Replace the `ingredients.push` with `setIngredients((previousValue => [...previousValue, item]))`
